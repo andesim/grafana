@@ -1,7 +1,9 @@
 /// <reference types="systemjs" />
 import { config } from '../config';
 import 'systemjs/dist/system';
-import 'systemjs/dist/extras/amd';
+import 'systemjs/dist/extras/amd'; // may not be necessary with a toolkit update?
+//import 'systemjs/dist/extras/named-exports';
+//import 'systemjs-css-extra/dist/css';
 
 export interface PluginCssOptions {
   light: string;

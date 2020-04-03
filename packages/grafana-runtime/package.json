@@ -25,7 +25,8 @@
   "dependencies": {
     "@grafana/data": "7.0.0-pre.0",
     "@grafana/ui": "7.0.0-pre.0",
-    "systemjs": "6.2.6"
+    "systemjs": "6.2.6",
+    "systemjs-css-extra": "1.0.2"
   },
   "devDependencies": {
     "@grafana/tsconfig": "^1.0.0-rc1",

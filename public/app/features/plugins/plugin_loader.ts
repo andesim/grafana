@@ -60,7 +60,22 @@ grafanaUI.DataSourceApi = grafanaData.DataSourceApi;
 import * as rxjs from 'rxjs';
 import * as rxjsOperators from 'rxjs/operators';
 
+/*const temp = () => {
+  const im = document.createElement('script');
+  im.type = 'importmap';
+  im.textContent = JSON.stringify({
+    imports: {
+      'my-library': '/my-rad-library.mjs',
+    }
+  });
+  document.currentScript.after(im);
+};*/
+
 const exposeToPlugin = (name: string, component: any) => {
+  // @ts-ignore
+  const key = Object.values(require.cache).filter(({ exports }) => exports === component)?.i;
+  // @ts-ignore
+  console.log(component, key, require.cache);
   // `resolve` is needed because: https://github.com/systemjs/systemjs/issues/2152
   SystemJS.set(SystemJS.resolve(name), component);
 };
